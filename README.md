@@ -1,7 +1,10 @@
 # Netflix GPT
 
 - Create React App
-- configuresd Tailwind CSS
+- configured Tailwind CSS
+- Header
+- Log In form
+- Sign Up form
 
 # Features
 
@@ -19,6 +22,6 @@
     - Movie suggestions
       - Movie lists \* N
 
-- Netflix GPT
+- NetflixGPT
   - Search Bar
   - Movie Suggestions
