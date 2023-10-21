@@ -12,5 +12,3 @@ function App() {
 }
 
 export default App;
-
-//TODO: 3:02:00
