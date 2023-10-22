@@ -28,6 +28,7 @@
 - Update store with Trailer Video Data
 - Embedded th Youtube Video and makae it autoplay and mute
 - Tailwind classes to make Main Container look awesome
+<!-- TODO: build Secondary Component 2:37:27 -->
 
 # Features
 

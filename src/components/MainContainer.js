@@ -8,13 +8,12 @@ const MainContainer = () => {
   //Picking random movie to play trailer
   let randomNum = Math.floor(Math.random() * 20);
   let trailerMovie = movies[randomNum];
-  console.log(trailerMovie);
 
-  const { original_title, overview, id } = trailerMovie;
+  const { title, overview, id } = trailerMovie;
 
   return (
     <div>
-      <VideoTitle title={original_title} description={overview} />
+      <VideoTitle title={title} description={overview} />
       <VideoBackground movie_id={id} />
     </div>
   );

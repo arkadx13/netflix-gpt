@@ -1,24 +1,24 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { addNowPlayingMovies } from "../utils/moviesSlice";
+import { addUpcomingMovies } from "../utils/moviesSlice";
 
-const useNowPlayingMovies = () => {
+const useUpcomingMovies = () => {
   //Fetch data from TMDB API and update store
   const dispatch = useDispatch();
 
-  const getNowPlayingMovies = () => {
-    fetch("https://api.themoviedb.org/3/movie/now_playing?page=1", API_OPTIONS)
+  const getUpcomingMovies = () => {
+    fetch("https://api.themoviedb.org/3/movie/upcoming?page=1", API_OPTIONS)
       .then((response) => response.json())
       .then((response) => {
-        dispatch(addNowPlayingMovies(response?.results));
+        dispatch(addUpcomingMovies(response?.results));
       })
       .catch((err) => console.error(err));
   };
 
   useEffect(() => {
-    getNowPlayingMovies();
+    getUpcomingMovies();
   }, []);
 };
 
-export default useNowPlayingMovies;
+export default useUpcomingMovies;

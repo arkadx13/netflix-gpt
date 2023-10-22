@@ -1,8 +1,13 @@
 const VideoTitle = ({ title, description }) => {
+  const trimDescription =
+    description.length > 500
+      ? description.substring(0, 500) + " . . ."
+      : description;
+
   return (
-    <div className="pt-[30%] px-12 absolute text-white bg-gradient-to-r from-black w-full aspect-video">
+    <div className="pt-[20%] px-12 absolute text-white bg-gradient-to-t from-black w-full aspect-video">
       <h1 className="font-bold text-2xl">{title}</h1>
-      <p className="py-3 w-2/4">{description}</p>
+      <p className="py-3 w-2/4">{trimDescription}</p>
       <div className="font-semibold">
         <button className="bg-white text-black  px-5 py-1 mr-2 rounded-sm  hover:bg-opacity-80">
           ▷ Play

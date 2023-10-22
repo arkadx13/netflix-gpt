@@ -61,14 +61,11 @@ const Login = () => {
             .catch((error) => {
               setErrorMessage(error.message);
             });
-
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorMessage);
-          console.log(errorCode + "-" + errorMessage);
         });
     } else {
       //Sign In
@@ -85,7 +82,6 @@ const Login = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorMessage);
-          console.log(errorCode + "-" + errorMessage);
         });
     }
   };

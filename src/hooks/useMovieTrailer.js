@@ -14,20 +14,15 @@ const useMovieTrailer = (movie_id) => {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log("movie videos:", response.results);
         const filterOfficialTrailer = response.results.filter(
           (video) => video.name === "Official Trailer"
         );
-        const filterTrailer = response.results.filter(
-          (video) => video.type === "Trailer"
-        );
+
         const trailer =
-          filterOfficialTrailer.length === 0
-            ? filterTrailer.length === 0
-              ? response.results[0]
-              : filterTrailer[0]
-            : filterOfficialTrailer;
-        console.log("trailer data:", trailer);
+          filterOfficialTrailer.length !== 0
+            ? filterOfficialTrailer[0]
+            : response.results[0];
+
         dispatch(addTrailerVideo(trailer));
       })
       .catch((err) => console.error(err));
