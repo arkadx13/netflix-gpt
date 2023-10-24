@@ -7,7 +7,7 @@ const VideoTitle = ({ title, description }) => {
   return (
     <div className="pt-[20%] px-12 absolute text-white bg-gradient-to-t from-black w-full aspect-video">
       <h1 className="font-bold text-2xl">{title}</h1>
-      <p className="py-3 w-2/4">{trimDescription}</p>
+      <p className="py-3 w-2/4 opacity-70">{trimDescription}</p>
       <div className="font-semibold">
         <button className="bg-white text-black  px-5 py-1 mr-2 rounded-sm  hover:bg-opacity-80">
           ▷ Play

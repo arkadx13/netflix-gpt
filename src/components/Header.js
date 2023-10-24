@@ -4,12 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
-import { LOGO, USER_AVATAR } from "../utils/constants";
+import { LOGO, SUPPORTED_LANAGUAGES, USER_AVATAR } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user); // subscribing to the store
+  const gptPage = useSelector((store) => store.gpt.showGptSearch);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -41,15 +44,42 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
+  const handleGptSearchClick = () => {
+    dispatch(toggleGptSearchView());
+  };
+
+  const handleLanguageChange = (e) => {
+    console.log(e.target.value);
+    dispatch(changeLanguage(e.target.value));
+  };
+
   return (
     <div className="absolute w-full py-2 bg-gradient-to-b from-black z-10 flex justify-between">
       <img className="w-48" src={LOGO} alt="logo" />
       {user && (
         <div className="flex my-5">
+          {gptPage && (
+            <select
+              className="h-8 bg-black text-white opacity-30 hover:opacity-70 p-1"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANAGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+          <button
+            className="h-8 w-28 px-4 mx-4 rounded-sm bg-purple-800 text-white text-sm hover:text-purple-800 hover:bg-white hover:font-bold"
+            onClick={handleGptSearchClick}
+          >
+            {gptPage ? "Home" : "GPT Search"}
+          </button>
           <img className="h-8" src={user?.photoURL} />
           <button
             onClick={handleSignOut}
-            className="px-3 text-white hover:scale-95 hover:animate-pulse"
+            className="px-3 border border-white h-8 mx-4 rounded-sm opacity-30 text-white hover:scale-95 hover:animate-pulse hover:opacity-100"
           >
             Sign Out
           </button>
