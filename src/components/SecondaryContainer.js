@@ -5,15 +5,10 @@ const SecondaryContainer = () => {
   const movies = useSelector((store) => store?.movies);
   const { nowPlayingMovies, popularMovies, topRatedMovies, upcomingMovies } =
     movies;
-  if (!movies) return;
-  /* 
-MovieList - Popular
-  movieCard
-MovieList - Now Playing
-MovieList - Trending
-MovieList - Horror
 
-*/
+  console.log(nowPlayingMovies);
+  if (!movies) return;
+
   return (
     movies && (
       <div className="bg-gradient-to-b  bg-black">
