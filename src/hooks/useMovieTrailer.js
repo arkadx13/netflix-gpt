@@ -8,7 +8,7 @@ const useMovieTrailer = (movie_id) => {
   const trailerVideo = useSelector((store) => store.movies.trailerVideo);
 
   // fetching trailer video && updating the store with trailer video data
-  const getTrailerVideo = () => {
+  const getMovieVideos = () => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`,
       API_OPTIONS
@@ -24,15 +24,13 @@ const useMovieTrailer = (movie_id) => {
             ? filterOfficialTrailer[0]
             : response.results[0];
 
-        console.log("trailer", trailer);
-
         dispatch(addTrailerVideo(trailer));
       })
       .catch((err) => console.error(err));
   };
 
   useEffect(() => {
-    !trailerVideo && getTrailerVideo();
+    !trailerVideo && getMovieVideos();
   }, []);
 };
 

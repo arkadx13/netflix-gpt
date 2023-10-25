@@ -37,15 +37,7 @@
 - GPT Search Pag
 - GPT Search Bar
 - (BONUS FEATURE) Multi-language feature
-- Get OpenAI API Key
-- Gpt Search API Call
-- fetched gptMoviesSuggestions from TMDB
-- created gptSlice, added data
-- Reused MovieList Component to make movie suggestion container
-- Memoization
-- Added .env file
-- adding .env file to gitignore
-- Made site responsive
+<!-- TODO: - Integrate GPT APIs -->
 
 # Features
 

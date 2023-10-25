@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
-import { LOGO, SUPPORTED_LANAGUAGES } from "../utils/constants";
+import { LOGO, SUPPORTED_LANAGUAGES, USER_AVATAR } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
@@ -55,7 +55,7 @@ const Header = () => {
 
   return (
     <div className="absolute w-full py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-36 md:w-48" src={LOGO} alt="logo" />
+      <img className="w-48" src={LOGO} alt="logo" />
       {user && (
         <div className="flex my-5">
           {gptPage && (
@@ -71,12 +71,12 @@ const Header = () => {
             </select>
           )}
           <button
-            className="h-8 w-28 px-4 mx-0 md:mx-4 rounded-sm bg-purple-800 text-white text-sm hover:text-purple-800 hover:bg-white hover:font-bold"
+            className="h-8 w-28 px-4 mx-4 rounded-sm bg-purple-800 text-white text-sm hover:text-purple-800 hover:bg-white hover:font-bold"
             onClick={handleGptSearchClick}
           >
             {gptPage ? "Home" : "GPT Search"}
           </button>
-          <img className="hidden md:inline-block h-8" src={user?.photoURL} />
+          <img className="h-8" src={user?.photoURL} />
           <button
             onClick={handleSignOut}
             className="px-3 border border-white h-8 mx-4 rounded-sm opacity-30 text-white hover:scale-95 hover:animate-pulse hover:opacity-100"
