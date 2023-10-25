@@ -6,13 +6,12 @@ const SecondaryContainer = () => {
   const { nowPlayingMovies, popularMovies, topRatedMovies, upcomingMovies } =
     movies;
 
-  console.log(nowPlayingMovies);
   if (!movies) return;
 
   return (
     movies && (
-      <div className="bg-gradient-to-b  bg-black">
-        <div className="-mt-40 pb-40 relative z-20 pl-4">
+      <div className="bg-gradient-to-b bg-black">
+        <div className="pt-[40%] md:pt-0 -mt-40 pb-40 relative z-20 pl-0 md:pl-4">
           <MovieList title={"Now Playing"} movies={nowPlayingMovies} />
           <MovieList title={"Popular"} movies={popularMovies} />
           <MovieList title={"Top Rated"} movies={topRatedMovies} />

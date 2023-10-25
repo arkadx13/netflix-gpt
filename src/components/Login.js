@@ -90,13 +90,17 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={BG_URL} alt="background-img" />
+        <img
+          className="h-screen object-cover md:h-full"
+          src={BG_URL}
+          alt="background-img"
+        />
       </div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
         }}
-        className="flex flex-col absolute my-28 mx-auto left-0 right-0 px-10 py-7 bg-black w-4/12 text-white rounded-md bg-opacity-90"
+        className="flex flex-col absolute my-28 mx-auto left-0 right-0 px-10 py-7 bg-black w-full md:w-4/12 text-white rounded-md bg-opacity-90"
       >
         <h1 className="text-2xl my-1 font-bold">
           {isSignInForm ? "Sign In" : "Sign Up"}

@@ -55,7 +55,7 @@ const Header = () => {
 
   return (
     <div className="absolute w-full py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-48" src={LOGO} alt="logo" />
+      <img className="w-32 md:w-48" src={LOGO} alt="logo" />
       {user && (
         <div className="flex my-5">
           {gptPage && (
@@ -71,15 +71,15 @@ const Header = () => {
             </select>
           )}
           <button
-            className="h-8 w-28 px-4 mx-4 rounded-sm bg-purple-800 text-white text-sm hover:text-purple-800 hover:bg-white hover:font-bold"
+            className="h-8 w-24 md:w-28 px-4 mx-0 md:mx-4 rounded-sm bg-purple-800 text-white text-xs md:text-sm hover:text-purple-800 hover:bg-white hover:font-bold"
             onClick={handleGptSearchClick}
           >
             {gptPage ? "Home" : "GPT Search"}
           </button>
-          <img className="h-8" src={user?.photoURL} />
+          <img className="hidden md:inline-block h-8" src={user?.photoURL} />
           <button
             onClick={handleSignOut}
-            className="px-3 border border-white h-8 mx-4 rounded-sm opacity-30 text-white hover:scale-95 hover:animate-pulse hover:opacity-100"
+            className="px-3 border border-white h-8 mx-2 md:mx-4 rounded-sm opacity-30 text-white text-xs md:text-base hover:scale-95 hover:animate-pulse hover:opacity-100"
           >
             Sign Out
           </button>
