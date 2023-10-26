@@ -3,9 +3,6 @@ import useMovieTrailer from "../hooks/useMovieTrailer";
 
 const VideoBackground = ({ movie_id }) => {
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
-  console.log("VideoBackground (trailerVideo?.key):", trailerVideo?.key);
-  const trialerLink = `https://www.youtube.com/embed/${trailerVideo?.key}?&autoplay=1&mute=1`;
-  console.log("VideoBackground (trailerLink):", trialerLink);
 
   useMovieTrailer(movie_id);
 

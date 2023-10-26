@@ -24,10 +24,6 @@ const useMovieTrailer = (movie_id) => {
         ? filterOfficialTrailer[0]
         : data.results[0];
 
-    const trailerLinkdebug = `https://www.youtube.com/embed/${trailer?.key}?&autoplay=1&mute=1`;
-
-    console.log("useMovieTrailer (trailerLink):", trailerLinkdebug);
-
     dispatch(addTrailerVideo(trailer));
   };
 

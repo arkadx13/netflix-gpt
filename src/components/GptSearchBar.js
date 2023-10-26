@@ -23,7 +23,6 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-    console.log(searchText.current.value);
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
@@ -38,12 +37,10 @@ const GptSearchBar = () => {
       //error
     }
 
-    console.log(gptResult.choices);
     const queryMovies = gptResult.choices?.[0]?.message?.content.split("/");
 
     const promiseArray = queryMovies.map((movie) => searchMoveTMDB(movie));
     const tmdbResults = await Promise.all(promiseArray);
-    console.log(tmdbResults);
     dispatch(
       addGptMovieResult({ movieNames: queryMovies, movieResults: tmdbResults })
     );
