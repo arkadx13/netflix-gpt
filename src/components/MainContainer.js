@@ -8,7 +8,7 @@ const MainContainer = () => {
   //Picking random movie to play trailer
   let randomNum = Math.floor(Math.random() * 20);
   let trailerMovie = movies[randomNum];
-  console.log("trailer:", trailerMovie);
+  console.log("MainContainer (trailer):", trailerMovie);
 
   const { title, overview, id } = trailerMovie;
 

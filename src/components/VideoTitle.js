@@ -3,6 +3,8 @@ const VideoTitle = ({ title, description }) => {
     description.length > 500
       ? description.substring(0, 500) + " . . ."
       : description;
+  console.log("______VideoTitle (title):", title);
+  console.log("______VideoTitle (desprition):", description);
 
   return (
     <div className="mt-[20%] md:mt-0 pt-[60%] md:pt-[20%] px-2 md:px-12 absolute text-white flex justify-end md:inline-block bg-gradient-to-t from-black w-full aspect-video">
